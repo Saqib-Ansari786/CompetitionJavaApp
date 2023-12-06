@@ -1,14 +1,14 @@
 
 public class Competitor {
     private int competitorNumber;
-    private String competitorName;
+    private Name competitorName;
     private String country;
     private String level;
     private int age;
     private int[] scores;
     private String gender;
 
-    public Competitor(int competitorNumber, String competitorName, String country, String level, int age,
+    public Competitor(int competitorNumber, Name competitorName, String country, String level, int age,
             int[] scores) {
         this.competitorNumber = competitorNumber;
         this.competitorName = competitorName;
@@ -28,11 +28,11 @@ public class Competitor {
         this.competitorNumber = competitorNumber;
     }
 
-    public String getCompetitorName() {
+    public Name getCompetitorName() {
         return competitorName;
     }
 
-    public void setCompetitorName(String competitorName) {
+    public void setCompetitorName(Name competitorName) {
         this.competitorName = competitorName;
     }
 
@@ -82,9 +82,9 @@ public class Competitor {
     public String getFullDetails() {
         StringBuilder details = new StringBuilder();
         details.append("Competitor number ").append(competitorNumber)
-                .append(", name ").append(competitorName)
+                .append(", name ").append(competitorName.getFullName())
                 .append(", country ").append(country)
-                .append(".\n").append(competitorName).append(" is a ")
+                .append(".\n").append(competitorName.getFullName()).append(" is a ")
                 .append(level).append(" aged ").append(age)
                 .append(" and received these scores: ");
         for (int score : scores) {
@@ -96,16 +96,8 @@ public class Competitor {
     }
 
     public String getShortDetails() {
-        return "CN " + competitorNumber + " (" + getInitials() + ") has overall score " + getOverallScore() + ".";
-    }
-
-    private String getInitials() {
-        String[] nameParts = competitorName.split(" ");
-        StringBuilder initials = new StringBuilder();
-        for (String part : nameParts) {
-            initials.append(part.charAt(0));
-        }
-        return initials.toString().toUpperCase();
+        return "CN " + competitorNumber + " (" + competitorName.getInitials() + ") has overall score "
+                + getOverallScore() + ".";
     }
 
     public String getLevelDescription() {
@@ -130,14 +122,4 @@ public class Competitor {
             return "This is a senior.";
         }
     }
-
-    public static void main(String[] args) {
-        int[] scores = { 10, 20, 30, 40, 50 };
-        Competitor c = new Competitor(1, "John Smith", "UK", "Beginner", 17, scores);
-        System.out.println(c.getFullDetails());
-        System.out.println(c.getShortDetails());
-        System.out.println(c.getLevelDescription());
-        System.out.println(c.getAgeDescription());
-    }
-
 }

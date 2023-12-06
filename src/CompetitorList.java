@@ -37,8 +37,11 @@ public class CompetitorList {
             // + level + " " + country + " "
             // + scores[0] + " " + scores[1] + " " + scores[2] + " " + scores[3]);
 
-            Competitor competitor = new Competitor(competitorNumber, competitorName,
-                    country, level, age, scores);
+            String firstName = competitorName.split(" ")[0];
+            String lastName = competitorName.split(" ")[1];
+
+            Competitor competitor = new Competitor(competitorNumber, new Name(firstName, lastName), country, level, age,
+                    scores);
 
             competitors.add(competitor);
         }
@@ -77,8 +80,8 @@ public class CompetitorList {
         // System.out.println("--------------------------------------------");
         // competitorList.displayCompetitorsDetails();
         // System.out.println("--------------------------------------------");
-        // competitorList.displayCompetitorWithHighestScore();
+        competitorList.displayCompetitorWithHighestScore();
         // System.out.println("--------------------------------------------");
-        competitorList.displayShortDetails(113);
+        // competitorList.displayShortDetails(113);
     }
 }
