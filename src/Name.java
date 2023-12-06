@@ -27,4 +27,8 @@ public class Name {
         // return firstName + " " + lastName;
         return String.format("%s %s", firstName, lastName);
     }
+
+    public String getInitials() {
+        return String.format("%s.%s.", firstName.charAt(0), lastName.charAt(0));
+    }
 }

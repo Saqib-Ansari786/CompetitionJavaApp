@@ -80,8 +80,8 @@ public class CompetitorList {
         // System.out.println("--------------------------------------------");
         // competitorList.displayCompetitorsDetails();
         // System.out.println("--------------------------------------------");
-        competitorList.displayCompetitorWithHighestScore();
+        // competitorList.displayCompetitorWithHighestScore();
         // System.out.println("--------------------------------------------");
-        // competitorList.displayShortDetails(113);
+        competitorList.displayShortDetails(113);
     }
 }
