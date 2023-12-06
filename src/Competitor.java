@@ -6,6 +6,7 @@ public class Competitor {
     private String level;
     private int age;
     private int[] scores;
+    private String gender;
 
     public Competitor(int competitorNumber, String competitorName, String country, String level, int age,
             int[] scores) {
