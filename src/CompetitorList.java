@@ -40,8 +40,8 @@ public class CompetitorList {
             String firstName = competitorName.split(" ")[0];
             String lastName = competitorName.split(" ")[1];
 
-            Competitor competitor = new Competitor(competitorNumber, new Name(firstName, lastName), country, level, age,
-                    scores);
+            LudoCompetitor competitor = new LudoCompetitor(competitorNumber, new Name(firstName, lastName), country,
+                    level, age, scores);
 
             competitors.add(competitor);
         }
